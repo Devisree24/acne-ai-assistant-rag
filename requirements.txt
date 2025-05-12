@@ -1,0 +1,7 @@
+Flask
+python-dotenv
+openai
+PyPDF2
+faiss-cpu
+sentence-transformers
+gunicorn
