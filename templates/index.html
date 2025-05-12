@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Acne Assistant - Ask Your Query</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            padding: 40px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #00528c;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: vertical;
+        }
+        button {
+            background: #00528c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #003e6f;
+        }
+        .result {
+            margin-top: 30px;
+            background: #e6f0fb;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ask a Medical Query About Acne</h1>
+        <form method="POST">
+            <label for="query">Your Question:</label>
+            <textarea name="query" id="query" placeholder="e.g., What are the side effects of isotretinoin?" required>{{ query }}</textarea>
+            <button type="submit">Get Answer</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <strong>AI Answer:</strong><br><br>
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
